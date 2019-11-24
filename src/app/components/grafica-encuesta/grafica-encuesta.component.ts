@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { setInterval } from 'timers';
 
 @Component({
   selector: 'app-grafica-encuesta',
@@ -17,6 +18,24 @@ export class GraficaEncuestaComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
+
+    setInterval( () => {
+
+      const newData = [
+        Math.round( Math.random() * 100),
+        Math.round( Math.random() * 100),
+        Math.round( Math.random() * 100),
+        Math.round( Math.random() * 100),
+      ];
+
+      this.barChartData = [
+        { data: newData, label: 'Preguntas'}
+      ];
+
+    }, 5000);
+
+
   }
 
 }
