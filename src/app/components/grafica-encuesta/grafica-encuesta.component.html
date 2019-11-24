@@ -11,3 +11,19 @@
           </div>
     </div>
 </div>
+
+<div class="row justify-content-center">
+    <form #f="ngForm" (ngSubmit)="enviarValores(f.value)">
+        <div class="form-group">
+          <h1>Preguntas para votar</h1>
+          <select class="form-control" id="pregunta">
+            <option *ngFor="let preg of preguntas" [value]="preg"> {{ preg }} </option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Valor</label>
+          <input type="number" class="form-control" ngModel name="valor">
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar voto</button>
+      </form>
+</div>
