@@ -52,10 +52,10 @@ export class GraficaEncuestaComponent implements OnInit {
 
     // tslint:disable-next-line: whitespace
     // tslint:disable-next-line: no-angle-bracket-type-assertion
-    const questionNumber = (<HTMLInputElement> document.getElementById('pregunta')).value;
+    let questionNumber = (<HTMLInputElement> document.getElementById('pregunta')).value;
 
     const pregunta = questionNumber;
-    const valor = form.valor;
+    let valor = form.valor;
 
     const voto = {
       pregunta,
@@ -65,6 +65,8 @@ export class GraficaEncuestaComponent implements OnInit {
     this.http.post("http://localhost:5000/encuesta", voto).subscribe( resp => {
       console.log(resp);
     });
+
+
 
   }
 

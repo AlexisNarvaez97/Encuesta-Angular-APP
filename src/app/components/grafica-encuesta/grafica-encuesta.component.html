@@ -13,7 +13,7 @@
 </div>
 
 <div class="row justify-content-center">
-    <form #f="ngForm" (ngSubmit)="enviarValores(f.value)">
+    <form #f="ngForm" (ngSubmit)="enviarValores(f.value); f.reset()">
         <div class="form-group">
           <h1>Preguntas para votar</h1>
           <select class="form-control" id="pregunta">
